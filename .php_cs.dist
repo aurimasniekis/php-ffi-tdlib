@@ -1,0 +1,23 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in([__DIR__ . '/src']);
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules(
+        [
+            '@Symfony'                      => true,
+            'binary_operator_spaces'        => ['align_double_arrow' => true, 'align_equals' => true],
+            'ordered_imports'               => true,
+            'array_syntax'                  => ['syntax' => 'short'],
+            'void_return'                   => true,
+            'declare_strict_types'          => true,
+            'yoda_style'                    => true,
+            'increment_style'               => ['style' => 'post'],
+            'concat_space'                  => ['spacing' => 'one'],
+        ]
+    )
+    ->setFinder($finder)
+    ->setUsingCache(true);
+
