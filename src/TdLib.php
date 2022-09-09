@@ -28,7 +28,7 @@ HEADER;
     /**
      * @param string|null $libFile An optional file path/name to `libtdjson.so` library
      */
-    public function __construct(string $libFile = null)
+    public function __construct(string $libFile = null, int $logLvl = 0)
     {
         $libFile = $libFile ?? $this->getLibFilename();
 
@@ -37,7 +37,7 @@ HEADER;
         } catch (FFI\Exception $exception) {
             throw new InvalidArgumentException(sprintf('Failed loading TdLib library "%s"', $libFile));
         }
-
+        $this->ffi->td_set_log_verbosity_level($logLvl);
         $this->client = $this->ffi->td_json_client_create();
     }
 
