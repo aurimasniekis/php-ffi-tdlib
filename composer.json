@@ -1,5 +1,5 @@
 {
-    "name": "aurimasniekis/ffi-tdlib",
+    "name": "layas/ffi-tdlib",
     "type": "library",
     "description": "A PHP FFI integration with TdLib via JSON interface",
     "keywords": [
