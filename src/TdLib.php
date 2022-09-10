@@ -20,6 +20,7 @@ void td_json_client_send(void *client, const char *request);
 const char *td_json_client_receive(void *client, double timeout);
 const char *td_json_client_execute(void *client, const char *request);
 void td_json_client_destroy(void *client);
+void td_set_log_verbosity_level(int new_verbosity_level);
 HEADER;
 
     private FFI       $ffi;
